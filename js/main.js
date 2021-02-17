@@ -1,14 +1,12 @@
-setInterval(() => {
-    //location.reload();
-}, 1000);
 
-
+//Declaration des attribues necessaire
 var listCibles = [];
 var MyListBat = [];
 var listCliqued = [];
 var xhttp = new XMLHttpRequest();
 var OldShut="null",NewShut="null";
 var MyLastShut="null";
+
 
 function Close(){
     document.location.href="./index.php";
@@ -175,8 +173,13 @@ document.addEventListener("click",(e)=>{
         document.onmousemove = null;
         //x = parseInt((e.clientX-document.getElementById("TablePlace").getBoundingClientRect().left)/30)%8
         //y = parseInt((e.clientY-document.getElementById("TablePlace").getBoundingClientRect().top)/30)%10
-        document.getElementById((e.target.id).replace("X","I")).setAttribute("value",parseInt((e.clientX-document.getElementById("TablePlace").getBoundingClientRect().left)/30)%8+8*(parseInt((e.clientY-document.getElementById("TablePlace").getBoundingClientRect().top)/30)%10));
-        document.getElementById(e.target.id).style.left=(document.getElementById("TablePlace").getBoundingClientRect().left+32*(parseInt((e.clientX-document.getElementById("TablePlace").getBoundingClientRect().left)/30)%8))+"px";
-        document.getElementById(e.target.id).style.top=(document.getElementById("TablePlace").getBoundingClientRect().top+32*(parseInt((e.clientY-document.getElementById("TablePlace").getBoundingClientRect().top)/30)%10))+"px";
+        if((8-parseInt((e.clientX-document.getElementById("TablePlace").getBoundingClientRect().left)/30)%8)>=parseInt(e.target.id.replace("XB","")) && (parseInt((e.clientX-document.getElementById("TablePlace").getBoundingClientRect().left)/30)%8)>=0 && (parseInt((e.clientY-document.getElementById("TablePlace").getBoundingClientRect().top)/30)%10)>=0){
+            document.getElementById((e.target.id).replace("X","I")).setAttribute("value",parseInt((e.clientX-document.getElementById("TablePlace").getBoundingClientRect().left)/30)%8+8*(parseInt((e.clientY-document.getElementById("TablePlace").getBoundingClientRect().top)/30)%10));
+            document.getElementById(e.target.id).style.left=(document.getElementById("TablePlace").getBoundingClientRect().left+32*(parseInt((e.clientX-document.getElementById("TablePlace").getBoundingClientRect().left)/30)%8))+"px";
+            document.getElementById(e.target.id).style.top=(document.getElementById("TablePlace").getBoundingClientRect().top+32*(parseInt((e.clientY-document.getElementById("TablePlace").getBoundingClientRect().top)/30)%10))+"px";
+        }else{
+            document.getElementById(e.target.id).style.display="none";
+            document.getElementById(e.target.id.replace("X","")).style.filter="drop-shadow(-1px 2px 2px white)";
+        }
     }
 })

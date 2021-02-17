@@ -8,7 +8,10 @@
 </head>
 <body>
 
-	<?php include("./Scripts/NavBar.php") ?>
+	<a href="http://localhost/jeu/index.php" class="navBar">
+			<img class="logo" alt="..." src="./Assets/logo.ico"/>
+			<p class="title">Bataille Navale</p>
+	</a>
 	<!-- action="./Scripts/newPartie.php" --->
 	<div class="create_part">
 		<?php

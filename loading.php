@@ -15,7 +15,10 @@
 </head>
 <body>
 
-	<?php include("./Scripts/NavBar.php") ?>
+	<a href="http://localhost/jeu/index.php" class="navBar">
+			<img class="logo" alt="..." src="./Assets/logo.ico"/>
+			<p class="title">Bataille Navale</p>
+	</a>
 	<!-- action="./Scripts/newPartie.php" --->
 	<div class="create_part">
 		<div class="formPlacement">
@@ -136,11 +139,9 @@
 			<div id="WaitingForm" class="Waiting">
 					<img id="WaitingFormImg" src="./Assets/loading.gif" alt="">
 			</div>
-			<audio controls id="AudioId">
-				<source src="./Assets/music.mp3" type="audio/mp3">
-			</audio>
 			<script>
-				document.getElementById("AudioId").play();
+				var audio = new Audio('./Assets/music.mp3');
+				audio.play();
 			</script>
 <?php
 	}
