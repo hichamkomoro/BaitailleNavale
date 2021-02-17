@@ -115,7 +115,7 @@
 						<p class="title">Inviter votre ami</p>
 						<div class="J1">
 							<label>Lien à partager :</label>
-							<input type="text" class="Ilien" required autocomplete="false" value="http://localhost/jeu/loading.php?p=<?php echo md5('Je2');?>&id=<?php echo $_GET['id']; ?>" name="J1">
+							<input type="text" class="Ilien" required autocomplete="false" value="https://baitaille-navale.herokuapp.com/loading.php?p=<?php echo md5('Je2');?>&id=<?php echo $_GET['id']; ?>" name="J1">
 						</div>
 						<br>
 						<a href="./loading.php?p=<?php echo md5('Je1');?>&id=<?php echo $_GET['id']; ?>" class="start">Start</a>
